@@ -9,6 +9,10 @@ const KEY = process.env.REACT_APP_VIDEOS_API_KEY;
 class App extends Component {
   state = { videos: [], selectedVideo: null };
 
+  componentDidMount() {
+    this.onTermSubmit("mkbhd");
+  }
+
   onTermSubmit = async (term) => {
     const response = await youtube.get("/search", {
       params: {
